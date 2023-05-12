@@ -1,0 +1,15 @@
+This is a simple framework to test the "Request a demo" form.
+
+I have used a page object model with separate test and page layer.
+
+It is easy to add more pages and tests.
+
+Room for improvement:
+
+- Add cucumber support
+- Add multiple browser support
+- Add test data handling
+- Use WebDriverManager or other library to programmatically maintain the browser/driver versions
+- Add ability to run the tests in parallel
+- Add logging capabilities
+
