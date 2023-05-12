@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test thread-count="2" name="Test">
         <classes>
-            <class name="tests.ErrorPageTest"/>
+            <class name="tests.RequestDemoTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>
