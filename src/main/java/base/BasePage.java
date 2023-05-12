@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
 
     public WebDriver driver;
-    private Properties prop;
+    private final Properties prop;
     private String url;
 
 
@@ -23,18 +23,20 @@ public class BasePage {
         prop.load(data);
     }
 
-    public String getUrl() throws IOException {
+    public String getUrl() {
         url = prop.getProperty("url");
         return url;
     }
 
-    public WebDriver getDriver() throws IOException {
+    public WebDriver getDriver() {
+        //TODO: Add support for running the tests in parallel
+        //TODO: Use WebDriverManager to manage the browser/driver versions programmatically
         if (prop.getProperty("browser").equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
             driver = new ChromeDriver(options);
         }
-        //Add more browsers below
+        //TODO: Add more browsers below
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
